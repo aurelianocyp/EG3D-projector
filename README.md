@@ -12,16 +12,16 @@ Please see **[eg3d](https://github.com/NVlabs/eg3d)** official repo for eg3d ins
 
 先在eg3d中配环境
 
-Requirements：
+然后保证如下环境：
 
 CUDA 11.3 
 
 ```
 torch                        1.11.0
 torchvision                  0.12.0
-wandb                        0.12.18
-lpips                        0.1.4
 ```
+- `pip install wandb==0.12.18`
+- `pip install lpips==0.1.4` 
 
 
 
