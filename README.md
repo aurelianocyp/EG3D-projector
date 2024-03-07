@@ -105,6 +105,7 @@ Results will be saved to eg3d/projector/PTI/checkpoints, named as `./checkpoints
 You can run the following code to gen video using the obtained checkpoints :
 
 ```
+# 在内eg3d目录下
 python gen_videos_from_given_latent_code.py --outdir=out --npy_path ./projector_out/00018_w_plus/00018_w_plus.npy   --network=./projector/PTI/checkpoints/{Your PTI ckpt}.pth --sample_mult=2
 ```
 
