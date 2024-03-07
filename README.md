@@ -53,7 +53,7 @@ In this repo,  please prepare the input image `image_id.png` and its camera para
 
 ## pretrained model
 
-The projector needs vgg16 for loss computation, you can download vgg16.pt from https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/vgg16.pt and save it to `EG3D-projector/eg3d/network`.
+The projector needs vgg16 for loss computation, you can download vgg16.pt from https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/vgg16.pt and save it to `EG3D-projector/eg3d/networks`.
 
 
 
