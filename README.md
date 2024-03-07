@@ -32,7 +32,7 @@ lpips                        0.1.4
 This step is used to load the parameters from pkl checkpoint and save them to a pth file, so that code modifications on eg3d can take effect.
 
 ```
-git clone https://github.com/aurelianocyp/EG3D-projector.git
+git clone https://github.com/aurelianocyp/EG3D-projector.git # 克隆完成后需要把eg3d的networks文件夹中的5个模型放到这个项目的eg3d文件夹中的networks中
 cd eg3d # 进入的项目内的eg3d文件夹
 python convert_pkl_2_pth.py --outdir=convert_pkl_2_pth_out --trunc=0.7    --network_pkl=networks/ffhq512-128.pkl --network_pth=networks/ffhq512-128.pth --sample_mult=2
 ```
