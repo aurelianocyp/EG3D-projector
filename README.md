@@ -10,6 +10,8 @@ This is an **unofficial** inversion code of  **[eg3d](https://github.com/NVlabs/
 
 Please see **[eg3d](https://github.com/NVlabs/eg3d)** official repo for eg3d installation.
 
+先在eg3d中配环境
+
 Requirements：
 
 CUDA 11.3 
