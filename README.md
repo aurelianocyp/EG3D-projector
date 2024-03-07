@@ -82,6 +82,13 @@ python run_projector.py --outdir=projector_out --latent_space_type w_plus  --net
 Results will be saved to `./eg3d/projector_out/00018_w_plus`
 
 ## PTI projector
+先安装环境：
+- `sudo apt-get install software-properties-common`
+- `sudo add-apt-repository ppa:ubuntu-toolchain-r/test`
+- `sudo apt-get update`
+- `sudo apt-get install gcc-4.9`
+- `sudo apt-get install g++-4.9`
+- `gcc -v`
 
 **Notice:** before you run the PTI, please run the w or w_plusprojector to get the ''first_inv'' latent code (both w and w_plus are OK). 
 
