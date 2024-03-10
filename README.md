@@ -51,6 +51,8 @@ For **wild** images, please refer to this [script](https://github.com/NVlabs/eg3
 
 In this repo,  please prepare the input image `image_id.png` and its camera parameters `image_id.npy`. (please see the examplar data in  `./eg3d/projector_test_data`)
 
+这里的preparation必须要做，将projector_test_data视为<indir>就行，如何处理参考eg3d中的数据preparation。必须要处理，否则用只有npy和png的文件夹虽然不会报错，但是会渲染出黑视频
+
 ## pretrained model
 
 The projector needs vgg16 for loss computation, you can download vgg16.pt from https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/vgg16.pt and save it to `EG3D-projector/eg3d/networks`.
