@@ -62,6 +62,8 @@ cd eg3d/dataset_preprocessing/ffhq/
 
 cp -r projector_test_data/ Deep3DFaceRecon_pytorch/
 
+复制回命令cp -r eg3d/dataset_preprocessing/ffhq/projector_test_data/ EG3D-projector/eg3d/
+
 ## pretrained model
 
 The projector needs vgg16 for loss computation, you can download vgg16.pt from https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/vgg16.pt and save it to `EG3D-projector/eg3d/networks`.
