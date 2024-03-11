@@ -54,6 +54,7 @@ In this repo,  please prepare the input image `image_id.png` and its camera para
 这里的preparation必须要做，将projector_test_data视为<indir>就行，如何处理参考eg3d中的数据preparation。必须要处理，否则用只有npy和png的文件夹虽然不会报错，但是会渲染出黑视频
 
 eg3d和eg3d-projector放在一个机器中就行
+
 处理数据时可能用到的命令（在auto-tmp目录下运行）
 
 cp -r EG3D-projector/eg3d/projector_test_data/ eg3d/dataset_preprocessing/ffhq/
@@ -63,6 +64,16 @@ cd eg3d/dataset_preprocessing/ffhq/
 cp -r projector_test_data/ Deep3DFaceRecon_pytorch/
 
 复制回命令cp -r eg3d/dataset_preprocessing/ffhq/projector_test_data/ EG3D-projector/eg3d/
+
+得到新图片的npy文件的方式，将camera.json删减到只剩下该图片的一个中括号即[......],然后将删减后的json与如下程序放在同一文件夹运行即可得到npy文件：
+```python
+import json
+import numpy as np
+with open('dataset.json', 'r') as file:
+    data = json.load(file)
+numpy_array = np.array(data)
+np.save('numpy_data.npy', numpy_array)
+```
 
 ## pretrained model
 
