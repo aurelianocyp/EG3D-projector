@@ -138,3 +138,30 @@ python gen_videos_from_given_latent_code.py --outdir=out --npy_path ./projector_
 在Next3d的环境下运行，将next3d中的training_avatar_texture文件夹拷贝到eg3d文件夹中。
 
 将next3d中legacy的内容复制到eg3d的legacy中
+
+将eg3d中convert pkl 2 pth中107行_ = G.synthesis(ws[:1], c[:1])  # warm up注释掉
+
+将next3d中的data文件夹（里面只需包含demo文件夹，无需其他文件夹）复制到eg3d中
+
+将convert_pkl_2_pth中147行和148行的synthesis删掉，替换为如下代码：
+```python
+                vert_path = "data/demo/demo.obj"  # 这里加载obj文件
+                v = []
+                with open(vert_path, "r") as f:
+                    while True:
+                        line = f.readline()
+                        if line == "":
+                            break
+                        if line[:2] == "v ":  # 读取的是顶点
+                            v.append([float(x) for x in line.split()[1:]])
+                v = np.array(v).reshape((-1, 3))
+                v = torch.from_numpy(v).cuda().float().unsqueeze(0)  # 渲染每一轮的帧的时候都要读取一个obj
+                
+                if lms_cond:  # 这里加载kpt2d文件
+                    lms_path = "data/demo/demo_kpt2d.obj"
+                    lms = np.loadtxt(lms_path)
+                    lms = torch.from_numpy(lms).cuda().float().unsqueeze(0)
+                    v = torch.cat((v, lms), 1)  # 这里将obj文件与kpt2d文件连接了起来
+                img = G.synthesis(ws=w.unsqueeze(0), c=c[0:1], v=v,noise_mode='const')[image_mode][0]
+                img_new = G_new.synthesis(ws=w.unsqueeze(0), c=c[0:1], v=v,noise_mode='const')[image_mode][0]
+```
